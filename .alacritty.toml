@@ -1,0 +1,14 @@
+import = ["~/.config/alacritty/themes/themes/deep_space.toml"]
+
+[font]
+size = 12
+
+#[font.normal]
+#family = "UbuntuMono Nerd Front"
+
+[window]
+decorations = "none"
+
+[window.padding]
+x = 7
+y = 0
