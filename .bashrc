@@ -53,3 +53,4 @@ clone() {
 	cd "$name"
 } && export -f clone
 source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
