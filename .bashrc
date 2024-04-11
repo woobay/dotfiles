@@ -27,8 +27,8 @@ alias dot="cd $DOTFILES"
 
 alias e="exit"
 alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
+
+alias k="kubectl"
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
@@ -52,5 +52,6 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
+source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
