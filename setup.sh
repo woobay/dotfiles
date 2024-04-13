@@ -6,6 +6,7 @@ DOTFILES=(
 	".bashrc"
 	".alacritty.toml"
 	".tmux.conf"
+	".gitconfig"
 )
 
 for dotfile in "${DOTFILES[@]}";do
