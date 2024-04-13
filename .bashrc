@@ -24,6 +24,7 @@ alias nvim='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias ws="cd $WORKSPACE"
 alias dot="cd $DOTFILES"
+alias wo="cd $GHREPOS"
 
 alias e="exit"
 alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
