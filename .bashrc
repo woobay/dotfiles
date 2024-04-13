@@ -25,6 +25,7 @@ alias nvim='NVIM_APPNAME="nvim-kickstart" nvim'
 alias ws="cd $WORKSPACE"
 alias dot="cd $DOTFILES"
 alias wo="cd $GHREPOS"
+alias hl="cd $GHREPOS/homelab"
 
 alias e="exit"
 alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
@@ -53,6 +54,8 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
