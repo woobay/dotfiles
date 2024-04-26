@@ -14,6 +14,9 @@ export GHREPOS="$WORKSPACE/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 
 
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/home/woobay/.local/go/bin"
+export GOBIN="$HOME/.local/bin/"
 # ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
 
 PATH="~/.local/bin:~/.local/bin/go/bin:$PATH"
@@ -29,7 +32,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ls='ls -h --color=auto'
 
-alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
+# alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias ws="cd $WORKSPACE"
 alias dot="cd $DOTFILES"
@@ -63,7 +66,3 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
