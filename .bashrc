@@ -42,6 +42,7 @@ alias hl="cd $GHREPOS/homelab"
 alias e="exit"
 alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
 
+alias tf="terraform"
 alias k="kubectl"
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
