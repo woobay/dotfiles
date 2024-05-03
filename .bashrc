@@ -67,3 +67,20 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
