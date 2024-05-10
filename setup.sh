@@ -17,6 +17,7 @@ DOTFILES=(
 	".config/nvim/lua/kickstart/plugins/lint.lua"
 	".config/nvim/lua/kickstart/plugins/neo-tree.lua"
 	".config/nvim/lua/kickstart/health.lua"
+	".inputrc"
 )
 
 for dotfile in "${DOTFILES[@]}";do

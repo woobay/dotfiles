@@ -5,6 +5,8 @@ eval "$(starship init bash)"
 
 echo "source /etc/profile.d/bash_completion.sh" >> ~/.bashrc
 
+# ~~~~~~~~~~~~~~~~~ Modes ~~~~~~~~~~~~~~~~~~~
+set -o vi
 
 # ~~~~~~~~~~~~~~~~~ Dir ~~~~~~~~~~~~~~~~~~~
 
@@ -18,6 +20,10 @@ export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/home/woobay/.local/go/bin"
 export GOBIN="$HOME/.local/bin/"
 # ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
+
+export EDITOR=nvim
+export VISUAL=nvim
+
 
 PATH="~/.local/bin:~/.local/bin/go/bin:$PATH"
 GOOS=linux
@@ -67,6 +73,7 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
+source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
 source /etc/profile.d/bash_completion.sh
