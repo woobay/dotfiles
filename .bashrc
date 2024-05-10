@@ -16,10 +16,11 @@ export GHREPOS="$WORKSPACE/github.com/$GITUSER"
 export DOTFILES="$GHREPOS/dotfiles"
 
 
+# ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
+
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/home/woobay/.local/go/bin"
 export GOBIN="$HOME/.local/bin/"
-# ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
 
 export EDITOR=nvim
 export VISUAL=nvim
