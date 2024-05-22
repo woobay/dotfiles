@@ -1,9 +1,9 @@
 #!/bin/bash
 
 
-#version=0.27.4
+#version=0.32.4
 file=/tmp/k9s.tar.gz
-url="https://github.com/derailed/k9s/releases/download/v${version}/k9s_Linux_amd64.tar.gz"
+url="https://github.com/derailed/k9s/releases/download/v${version}/k9s_Darwin_amd64.tar.gz"
 
 cleanup () {
   rm -rf "$file"

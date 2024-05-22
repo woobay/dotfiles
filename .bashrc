@@ -17,7 +17,6 @@ export DOTFILES="$GHREPOS/dotfiles"
 
 
 # ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
-
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/home/woobay/.local/go/bin"
 export GOBIN="$HOME/.local/bin/"
@@ -31,6 +30,9 @@ GOOS=linux
 GOARCH=amd64
 GOPATH="~/.local/go"
 GOBIN="~/.local/go/bin"
+
+export GOROOT=/usr/local/go
+export PATH=$PATH:$GOROOT/bin
 
 # ~~~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~
 # some more ls aliases
@@ -74,21 +76,10 @@ clone() {
 	gh repo clone "$user/$name" -- --recurse-submodule
 	cd "$name"
 } && export -f clone
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
+
+update-go() {
+    curl -OL https://golang.org/dl/go$1.linux-amd64.tar.gz
+    sudo rm -rf /usr/local/go
+    sudo tar -C /usr/local -xzf go$1.linux-amd64.tar.gz
+    go version
+}
