@@ -83,3 +83,7 @@ update-go() {
     sudo tar -C /usr/local -xzf go$1.linux-amd64.tar.gz
     go version
 }
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
+source /etc/profile.d/bash_completion.sh
