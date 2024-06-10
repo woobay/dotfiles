@@ -31,8 +31,6 @@ GOARCH=amd64
 GOPATH="~/.local/go"
 GOBIN="~/.local/go/bin"
 
-export GOROOT=/usr/local/go
-export PATH=$PATH:$GOROOT/bin
 
 # ~~~~~~~~~~~~~~~~~ Aliases ~~~~~~~~~~~~~~~~
 # some more ls aliases
