@@ -1,4 +1,4 @@
-# setup.sh
+#!/bin/bash
 
 DIR=$HOME/workspace/github.com/woobay/dotfiles
 
@@ -7,6 +7,7 @@ DOTFILES=(
 	".alacritty.toml"
 	".tmux.conf"
 	".gitconfig"
+	".config/starship.toml"
 	".config/nvim/init.lua"
 	".config/nvim/lua/custom/plugins/init.lua"
 	".config/nvim/lua/custom/plugins/lazy-lock.json"
@@ -21,6 +22,8 @@ DOTFILES=(
 )
 
 for dotfile in "${DOTFILES[@]}";do
+	dirname=$(dirname "${HOME}/${dotfile}")
+	mkdir -p "$dirname"
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
