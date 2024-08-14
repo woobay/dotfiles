@@ -1,10 +1,6 @@
 # ~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~
 eval "$(starship init bash)"
 
-# ~~~~~~~~~~~~~~~~~ Source ~~~~~~~~~~~~~~~~
-
-echo "source /etc/profile.d/bash_completion.sh" >> ~/.bashrc
-
 # ~~~~~~~~~~~~~~~~~ Modes ~~~~~~~~~~~~~~~~~~~
 set -o vi
 
@@ -51,6 +47,7 @@ alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
 
 alias tf="terraform"
 alias k="kubectl"
+alias kx="kubectx"
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
@@ -81,7 +78,3 @@ update-go() {
     sudo tar -C /usr/local -xzf go$1.linux-amd64.tar.gz
     go version
 }
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
-source /etc/profile.d/bash_completion.sh
