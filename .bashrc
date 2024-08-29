@@ -49,6 +49,9 @@ alias tf="terraform"
 alias k="kubectl"
 alias kx="kubectx"
 
+#AWS Cli -> To change account
+alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf) && aws sso login'
+
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
 clone() {
