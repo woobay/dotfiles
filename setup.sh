@@ -21,9 +21,10 @@ DOTFILES=(
 	".inputrc"
 )
 
+mkdir -p ~/.config/nvim/lua/kickstart/plugins/
+mkdir -p ~/.config/nvim/lua/custom/plugins/
+
 for dotfile in "${DOTFILES[@]}";do
-	dirname=$(dirname "${HOME}/${dotfile}")
-	mkdir -p "$dirname"
 	rm -rf "${HOME}/${dotfile}"
 	ln -sf "${DIR}/${dotfile}" "${HOME}/${dotfile}"
 done
