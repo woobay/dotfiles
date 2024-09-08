@@ -7,6 +7,7 @@ DOTFILES=(
 	".alacritty.toml"
 	".tmux.conf"
 	".gitconfig"
+	".config/i3/config"
 	".config/starship.toml"
 	".config/nvim/init.lua"
 	".config/nvim/lua/custom/plugins/init.lua"

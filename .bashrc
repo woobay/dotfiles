@@ -41,7 +41,6 @@ alias ws="cd $WORKSPACE"
 alias dot="cd $DOTFILES"
 alias wo="cd $GHREPOS"
 alias hl="cd $GHREPOS/homelab"
-alias notes="cd $WORKSPACE/notes"
 
 
 alias e="exit"
@@ -49,10 +48,6 @@ alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
 
 alias tf="terraform"
 alias k="kubectl"
-alias kx="kubectx"
-
-#AWS Cli -> To change account
-alias awsp='export AWS_PROFILE=$(aws configure list-profiles | fzf) && aws sso login'
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 update-go() {
