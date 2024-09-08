@@ -22,6 +22,8 @@ DOTFILES=(
 	".inputrc"
 )
 
+mkdir -p ~/.config/i3/
+
 mkdir -p ~/.config/nvim/lua/kickstart/plugins/
 mkdir -p ~/.config/nvim/lua/custom/plugins/
 
