@@ -7,7 +7,7 @@ size = 11
 #family = "UbuntuMono Nerd Front"
 
 [window]
-decorations = "none"
+#decorations = "none"
 
 [window.padding]
 x = 7
