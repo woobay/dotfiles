@@ -6,6 +6,7 @@ DOTFILES=(
 	".bashrc"
 	".alacritty.toml"
 	".tmux.conf"
+	".config/aerospace/aerospace.toml"
 	".gitconfig"
 	".config/i3/config"
 	".config/starship.toml"
@@ -23,6 +24,8 @@ DOTFILES=(
 )
 
 mkdir -p ~/.config/i3/
+mkdir -p ~/.config/aerospace/
+
 
 mkdir -p ~/.config/nvim/lua/kickstart/plugins/
 mkdir -p ~/.config/nvim/lua/custom/plugins/

@@ -1,4 +1,6 @@
 # ~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~
+eval "$(fzf --bash)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init bash)"
 
 # ~~~~~~~~~~~~~~~~~ Modes ~~~~~~~~~~~~~~~~~~~
@@ -15,6 +17,7 @@ export DOTFILES="$GHREPOS/dotfiles"
 # ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
 export PATH="$PATH:/opt/nvim-linux64/bin"
 export PATH="$PATH:/home/woobay/.local/go/bin"
+export PATH="$PATH:/Users/gabriellafrance/.local/go/bin"
 export GOBIN="$HOME/.local/bin/"
 
 export EDITOR=nvim
@@ -49,10 +52,28 @@ alias t="tmux" XDG_CONFIG_HOME="$HOME"/.config
 alias tf="terraform"
 alias k="kubectl"
 
+alias gctx="gcloud-ctx"
+
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
+
 update-go() {
-    curl -OL https://golang.org/dl/go$1.linux-amd64.tar.gz
+#    curl -OL https://golang.org/dl/go$1.linux-amd64.tar.gz
+    curl -OL https://golang.org/dl/go$1.darwin-amd64.tar.gz
     sudo rm -rf /usr/local/go
-    sudo tar -C /usr/local -xzf go$1.linux-amd64.tar.gz
+    sudo tar -C /usr/local -xzf go$1.darwin-amd64.tar.gz
     go version
+}
+
+gcloud-ctx() {
+projects=$(gcloud projects list --format="value(projectId)" | grep -v '^sys-')
+selected_project=$(echo "$projects" | fzf)
+
+if [[ -n "$selected_project" ]]; then
+        # Set the selected project as the active project
+        gcloud config set project "$selected_project"
+        echo "Switched to project: $selected_project"
+else
+        echo "No project selected."
+fi
+
 }
