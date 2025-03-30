@@ -53,6 +53,7 @@ alias tf="terraform"
 alias k="kubectl"
 
 alias gctx="gcloud-ctx"
+alias cmr="check_merge_requests"
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
@@ -77,3 +78,53 @@ else
 fi
 
 }
+
+check_merge_requests() {
+    GITLAB_URL="https://gitlab.fennech.com"
+    GITLAB_TOKEN="${GITLAB_PRIVATE_TOKEN:-}"
+    
+    if [ -z "$GITLAB_TOKEN" ]; then
+        echo "Error: GITLAB_PRIVATE_TOKEN environment variable is not set"
+        echo "Please set it first: export GITLAB_PRIVATE_TOKEN='your-token'"
+        return 1
+    fi
+    
+    USER_ID=$(curl -s --header "PRIVATE-TOKEN: $GITLAB_TOKEN" \
+        "$GITLAB_URL/api/v4/user" | jq -r '.id')
+    
+    if [ -z "$USER_ID" ] || [ "$USER_ID" = "null" ]; then
+        echo "Error: Could not fetch user ID. Please check your token and GitLab URL."
+        return 1
+    fi
+    
+    # Fetch open merge requests created by you
+    echo "Fetching your open merge requests..."
+    curl -s --header "PRIVATE-TOKEN: $GITLAB_TOKEN" \
+        "$GITLAB_URL/api/v4/merge_requests?state=opened&author_id=$USER_ID" \
+        | jq -r '.[] | "Project: \(.references.full)\nTitle: \(.title)\nURL: \(.web_url)\n"'
+}
+
+check_merge_requests() {
+    GITLAB_URL="https://gitlab.fennech.com"
+    GITLAB_TOKEN="${GITLAB_PRIVATE_TOKEN:-}"
+
+    if [ -z "$GITLAB_TOKEN" ]; then
+        echo "Error: GITLAB_PRIVATE_TOKEN environment variable is not set"
+        echo "Please set it first: export GITLAB_PRIVATE_TOKEN='your-token'"
+        return 1
+    }
+    
+    USER_ID=$(curl -s --header "PRIVATE-TOKEN: $GITLAB_TOKEN" \
+        "$GITLAB_URL/api/v4/user" | jq -r '.id')
+    
+    if [ -z "$USER_ID" ] || [ "$USER_ID" = "null" ]; then
+        echo "Error: Could not fetch user ID. Please check your token and GitLab URL."
+        return 1
+    }
+
+    echo "Fetching your open merge requests..."
+    curl -s --header "PRIVATE-TOKEN: $GITLAB_TOKEN" \
+        "$GITLAB_URL/api/v4/merge_requests?state=opened&author_id=$USER_ID" \
+        | jq -r '.[] | "Project: \(.references.full)\nTitle: \(.title)\nURL: \(.web_url)\n"'
+}
+
