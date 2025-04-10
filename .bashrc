@@ -41,6 +41,7 @@ alias ls='ls -h --color=auto'
 # alias vim='NVIM_APPNAME="nvim-kickstart" nvim'
 
 alias ws="cd $WORKSPACE"
+alias ff="cd $WORKSPACE/gitlab.com/fennech/"
 alias dot="cd $DOTFILES"
 alias wo="cd $GHREPOS"
 alias hl="cd $GHREPOS/homelab"
