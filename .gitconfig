@@ -1,3 +1,5 @@
 [user]
 	email = gl.gabriellafrance@gmail.com
 	name = Gabriel Lafrance
+[push]
+	autoSetupRemote = true
