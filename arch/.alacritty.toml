@@ -1,0 +1,17 @@
+[general]
+import = ["~/workspace/github.com/woobay/dotfiles/alacritty/catppuccin.toml"]
+
+[terminal.shell]
+program = "tmux"
+args = ["-l"]
+
+[font]
+size = 14
+
+[window]
+decorations = "none"
+opacity = 0.92
+
+[window.padding]
+x = 7
+y = 7
