@@ -78,7 +78,7 @@ button:hover {
 #custom-vpn.on {
     background-color: #64727D;
     border-radius: 7px;
-    box-shadow: inset 0 -3px #26A65B;
+    color: #26A65B;
 }
 
 #custom-vpn.connecting {
@@ -90,7 +90,7 @@ button:hover {
 
 #custom-vpn.off {
     background-color: transparent;
-    box-shadow: inset 0 -3px #E74C3C;
+    color: #E74C3C;
 }
 
 #custom-vpn:hover {

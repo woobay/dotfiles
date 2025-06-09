@@ -9,6 +9,7 @@
 	],
 	"modules-right": [
 		"custom/vpn",
+		"memory",
 		"clock"
 	],
 	"keyboard-state": {
@@ -37,5 +38,9 @@
 		"exec": "$HOME/.config/waybar/scripts/vpn-waybar.sh",
 		"on-click": "$HOME/.config/waybar/scripts/vpn-waybar.sh toggle",
 		"tooltip": true
+	},
+	"memory": {
+		"interval": 30,
+		"format": "  {used:0.1f}G/{total:0.1f}G"
 	}
 }

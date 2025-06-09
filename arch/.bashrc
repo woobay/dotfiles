@@ -64,3 +64,21 @@ update-go() {
     go version
 }
 
+check-status() {
+	ROUTER="192.168.0.1"  # Change to your router's IP address
+	USER="admin"          # Change if your router uses a different username
+	SSH_KEY="~/.ssh/router"  # Change to your SSH key path if different
+	VPN_NUM=4             # Your active VPN client number
+
+	echo "Checking VPN client ${VPN_NUM} status..."
+	status=$(ssh -i $SSH_KEY $USER@$ROUTER "nvram get vpn_client${VPN_NUM}_state")
+
+	if [ "$status" == "2" ]; then
+		echo "VPN is CONNECTED"
+		echo "Server: $(ssh -i $SSH_KEY $USER@$ROUTER "nvram get vpn_client${VPN_NUM}_addr")"
+		return 0
+	else
+		echo "VPN is DISCONNECTED"
+		return 1
+	fi
+}
