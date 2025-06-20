@@ -1,0 +1,19 @@
+import = ["~/workspace/github.com/woobay/dotfiles/common/alacritty/catppuccin.toml"]
+
+[shell]
+program = "tmux"
+args = ["new-session", "-A", "-s", "main"]
+
+[font]
+size = 14
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+decorations = "Buttonless"
+opacity = 0.92
+
+[window.padding]
+x = 7
+y = 7
