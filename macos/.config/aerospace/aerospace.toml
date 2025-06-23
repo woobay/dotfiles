@@ -11,8 +11,6 @@ default-root-container-orientation = 'auto'
 # Mouse follows focus when focused monitor changes
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
-exec-on-workspace-change = ['/bin/bash', '-c', 'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE PREV_WORKSPACE=$AEROSPACE_PREV_WORKSPACE']
-
 after-startup-command = [
   'exec-and-forget borders active_color=0xffe1e3e4 inactive_color=0xff494d64 width=5.0',
 ]
@@ -36,6 +34,7 @@ alt-shift-k = 'move up'
 alt-shift-l = 'move right'
 
 alt-f = 'fullscreen'
+alt-c = 'close'
 
 alt-s = 'layout v_accordion' # 'layout stacking' in i3
 alt-w = 'layout h_accordion' # 'layout tabbed' in i3
@@ -55,6 +54,8 @@ alt-8 = 'workspace 8'
 alt-9 = 'workspace 9'
 alt-0 = 'workspace 10'
 
+alt-o = 'workspace O'
+
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
 alt-shift-3 = 'move-node-to-workspace 3'
@@ -65,6 +66,8 @@ alt-shift-7 = 'move-node-to-workspace 7'
 alt-shift-8 = 'move-node-to-workspace 8'
 alt-shift-9 = 'move-node-to-workspace 9'
 alt-shift-0 = 'move-node-to-workspace 10'
+
+alt-shift-o = 'move-node-to-workspace O'
 
 alt-shift-c = 'reload-config'
 
@@ -83,7 +86,7 @@ inner.horizontal = 10
 inner.vertical =   10
 outer.left =       10
 outer.bottom =     10
-outer.top =        44
+outer.top =        10
 outer.right =      10
 
 [workspace-to-monitor-force-assignment]
@@ -92,8 +95,23 @@ outer.right =      10
 3 = 'main'
 4 = 'main'
 5 = 'main'
-6 = 'main'
-7 = 'main'
-8 = 'main'
+6 = 'secondary'
+7 = 'secondary'
+8 = 'secondary'
 9 = 'secondary'
 10 = 'secondary'
+
+
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = [
+'layout floating'
+]
+
+[[on-window-detected]]
+if.app-id = 'com.google.Chrome.app.pjibgclleladliembfgfagdaldikeohf'              
+run = ['move-node-to-workspace 6']
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'              
+run = ['move-node-to-workspace O']
