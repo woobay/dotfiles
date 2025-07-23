@@ -1,6 +1,6 @@
 # ~~~~~~~~~~~~~~ Prompt ~~~~~~~~~~~~~~
 eval "$(fzf --bash)"
-eval "$(/opt/homebrew/bin/brew shellenv)"
+#eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(starship init bash)"
 
 # ~~~~~~~~~~~~~~~~~ Modes ~~~~~~~~~~~~~~~~~~~
