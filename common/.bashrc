@@ -52,6 +52,7 @@ alias k="kubectl"
 
 alias gctx="gcloud-ctx"
 alias cmr="check_merge_requests"
+alias task="go-task"
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
