@@ -1,8 +1,8 @@
+[general]
 import = ["~/workspace/github.com/woobay/dotfiles/common/alacritty/catppuccin.toml"]
 
-[shell]
-program = "tmux"
-args = ["new-session", "-A", "-s", "main"]
+[terminal]
+shell = { program = "tmux", args = ["new-session", "-A", "-s", "main"] }
 
 [font]
 size = 14
