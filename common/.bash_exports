@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# ~~~~~~~~~~~~~~~ Export ~~~~~~~~~~~~~~~~~
+
+
+export PATH="$PATH:/opt/nvim-linux64/bin"
+export PATH="$PATH:/home/woobay/.local/go/bin"
+export PATH="$PATH:/Users/gabriellafrance/.local/go/bin"
+export GOBIN="$HOME/.local/bin/"
+
+export EDITOR=nvim
+export VISUAL=nvim
+
+
+PATH="~/.local/bin:~/.local/bin/go/bin:$PATH"
+GOOS=linux
+GOARCH=amd64
+GOPATH="~/.local/go"
+GOBIN="~/.local/go/bin"
+
+# ~~~~~~~~~~~~~~~~~ Dir ~~~~~~~~~~~~~~~~~~~
+
+export WORKSPACE="$HOME/workspace"
+export GITUSER="woobay"
+export GHREPOS="$WORKSPACE/github.com/$GITUSER"
+export DOTFILES="$GHREPOS/dotfiles"
