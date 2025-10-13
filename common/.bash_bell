@@ -1,0 +1,52 @@
+#!/bin/bash
+
+# ---- Inits ----
+
+. $(brew --prefix asdf)/libexec/asdf.sh
+
+# ---- Aliases ----
+
+alias talosctl="HTTPS_PROXY=http://jump.mtl42.kmgmt.f0nz.int.bell.ca:3128 talosctl"
+alias vt="cd $WORKSPACE/gitlab.com/ga6122749/vtplatform/"
+
+# ---- Functions ----
+
+function set_http_proxy () {
+  http_proxy_pac=$1
+  if [ -z "$http_proxy_pac" ]; then
+    http_proxy_pac=`scutil --proxy | awk '\
+        /ProxyAutoConfigEnable/ { enabled = $3; } \
+        /ProxyAutoConfigURLString/ { proxy = $3; } \
+      END { if (enabled == "1") { print proxy; } }'`
+
+    ## Force fastweb.int.bell.ca when proxy is enabled
+    if [ ! -z "$http_proxy_pac" ]; then
+      http_proxy_pac="http://fastweb.int.bell.ca:8083"
+    fi
+  fi
+  http_proxy_pac_printable=$http_proxy_pac
+
+  if [ -n "$http_proxy_pac" ] && [[ `curl --noproxy '*' -s $http_proxy_pac > /dev/null ; echo $?` -eq 0 ]]; then
+      http_proxy=`echo ${http_proxy_pac} | sed 's/8083/80/'`
+      http_proxy_printable=`echo ${http_proxy_pac_printable} | sed 's/8083/80/'`
+      echo "proxy variables enabled on ${http_proxy_printable}"
+      export http_proxy="${http_proxy}"
+      export https_proxy="${http_proxy}"
+      export HTTP_PROXY="${http_proxy}"
+      export HTTPS_PROXY="${http_proxy}"
+      export no_proxy="localhost,127.0.0.1,.v36.klab.f0ns3.ca,.v36.kprod.f0ns3.ca,.kargo-lab.int.bell.ca,.kargo.int.bell.ca,.vt-lab.int.bell.ca,.vt.int.bell.ca,.gitlab.int.bell.ca,.artifactory.int.bell.ca,.soc.int.bell.ca,.int.bell.ca,10.55.68.246,10.55.99.246,10.55.127.246,10.67.6.146,10.78.165.2,10.67.64.130,10.78.146.50"
+      export NO_PROXY="${no_proxy}"
+  else
+     echo "proxy variables disabled"
+  fi
+}
+
+function unset_http_proxy () {
+  unset http_proxy
+  unset https_proxy
+  unset HTTP_PROXY
+  unset HTTPS_PROXY
+  unset no_proxy
+  unset NO_PROXY
+  echo "proxy variables disabled"
+}

@@ -1,6 +1,7 @@
 require("config.lazy")
 
 vim.opt.clipboard = "unnamedplus"
+vim.opt.relativenumber = true
 
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")

@@ -2,6 +2,18 @@
 
 # ~~~~~~~~~~~~~~~ Functions ~~~~~~~~~~~~~~
 
+kube-ctx() {
+    contexts=$(kubectl config get-contexts --output=name)
+    selected_context=$(echo "$contexts" | fzf --prompt="Select Kubernetes context: ")
+    
+    if [[ -n "$selected_context" ]]; then
+        kubectl config use-context "$selected_context"
+        echo "Switched to context: $selected_context"
+    else
+        echo "No context selected."
+    fi
+}
+
 gcloud-ctx() {
 projects=$(gcloud projects list --format="value(projectId)" | grep -v '^sys-')
 selected_project=$(echo "$projects" | fzf)
