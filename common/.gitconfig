@@ -1,5 +1,11 @@
 [user]
-	email = gl.gabriellafrance@gmail.com
+	email = gabriel.lafrance@bell.ca
 	name = Gabriel Lafrance
 [push]
 	autoSetupRemote = true
+[core]
+	excludesfile = /Users/ga6122749/.gitignore_global
+[submodule]
+	recurse = true
+[url "git@gitlab.int.bell.ca:"]
+	insteadOf = https://gitlab.int.bell.ca/
