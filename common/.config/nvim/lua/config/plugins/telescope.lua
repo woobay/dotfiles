@@ -8,10 +8,14 @@ return {
     },
     config = function ()
       require('telescope').setup{
+        defaults = {
+        },
 	pickers = {
           find_files = {
             theme = "ivy",
-	    hidden = true
+	    hidden = true,
+            no_ignore = true,
+            no_ignore_parent = true,
           },
 	  live_grep = {
 	    theme = "ivy"
