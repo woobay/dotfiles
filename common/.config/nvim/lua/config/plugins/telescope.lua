@@ -8,33 +8,36 @@ return {
     },
     config = function ()
       require('telescope').setup{
-        defaults = {
-        },
+	defaults = {
+	},
 	pickers = {
-          find_files = {
-            theme = "ivy",
+	  find_files = {
+	    theme = "ivy",
 	    hidden = true,
-            no_ignore = true,
-            no_ignore_parent = true,
-          },
+	    no_ignore = true,
+	    no_ignore_parent = true,
+	  },
 	  live_grep = {
 	    theme = "ivy"
 	  }
-        },
-        extensions = {
-          fzf = {}
-        }
+	},
+	extensions = {
+	  fzf = {}
+	}
       }
       require('telescope').load_extension('fzf')
       vim.keymap.set('n', '<space>ff', require('telescope.builtin').find_files)
       vim.keymap.set('n', '<space>fg', require('telescope.builtin').live_grep)
       vim.keymap.set('n', '<space>fw', require('telescope.builtin').grep_string)
       vim.keymap.set('n', '<space>en', function()
-	 require('telescope.builtin').find_files {
-	   cwd = vim.env.home .. "/workspace/github.com/woobay/dotfiles/.config/nvim"
-	 }
-       end)
-     end
+	require('telescope.builtin').find_files {
+	  cwd = vim.env.HOME .. "/workspace/github.com/woobay/dotfiles/common/.config/nvim"
+	}
+      end)
+      vim.keymap.set('n', '<space>eb', function()
+	vim.cmd('edit ' .. vim.env.HOME .. '/.bash_bell')
+      end)
+    end
 
-   }
- }
+  }
+}
