@@ -31,7 +31,14 @@ return {
       vim.keymap.set('n', '<space>fw', require('telescope.builtin').grep_string)
       vim.keymap.set('n', '<space>en', function()
 	require('telescope.builtin').find_files {
-	  cwd = vim.env.HOME .. "/workspace/github.com/woobay/dotfiles/common/.config/nvim"
+	  cwd = vim.env.HOME .. "/workspace/github.com/woobay/dotfiles/common/.config/nvim",
+	  hidden = true,
+	}
+      end)
+      vim.keymap.set('n', '<space>dot', function()
+	require('telescope.builtin').find_files {
+	  cwd = vim.env.HOME .. "/workspace/github.com/woobay/dotfiles",
+	  hidden = true,
 	}
       end)
       vim.keymap.set('n', '<space>eb', function()
