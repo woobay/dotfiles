@@ -4,6 +4,10 @@ OS="$(uname -s)"
 
 HOME_DOTFILES=(
     ".bashrc"
+    ".bash_exports"
+    ".bash_inits"
+    ".bash_functions"
+    ".bash_aliases"
     ".alacritty.toml"
     ".tmux.conf"
     ".gitconfig"
