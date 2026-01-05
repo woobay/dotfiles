@@ -65,6 +65,16 @@ link_configs "${DIR}/common"
 case "$OS" in
     "Darwin")
         link_configs "${DIR}/macos"
+	GHOSTTY_CONFIG_SOURCE="${DIR}/common/.config/ghostty/config"
+        GHOSTTY_CONFIG_TARGET="$HOME/Library/Application Support/com.mitchellh.ghostty/config"
+
+        if [ -f "$GHOSTTY_CONFIG_SOURCE" ]; then
+            echo "Linking Ghostty config for macOS to its specific support directory..."
+            mkdir -p "$(dirname "$GHOSTTY_CONFIG_TARGET")"
+            rm -rf "$GHOSTTY_CONFIG_TARGET"
+            ln -sf "$GHOSTTY_CONFIG_SOURCE" "$GHOSTTY_CONFIG_TARGET"
+            echo "Ghostty config linked to: ${GHOSTTY_CONFIG_TARGET}"
+        fi
         ;;
     "Linux")
         link_configs "${DIR}/linux"
