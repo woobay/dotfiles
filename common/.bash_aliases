@@ -20,5 +20,5 @@ alias k="kubectl"
 
 alias gctx="gcloud-ctx"
 alias kctx="kube-ctx"
-alias task="go-task"
+# alias task="go-task"
 

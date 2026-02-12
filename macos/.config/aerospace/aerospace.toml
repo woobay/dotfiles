@@ -55,6 +55,7 @@ alt-0 = 'workspace 10'
 
 alt-o = 'workspace O'
 alt-s = 'workspace S'
+alt-p = 'workspace P'
 
 alt-shift-1 = 'move-node-to-workspace 1'
 alt-shift-2 = 'move-node-to-workspace 2'
@@ -69,6 +70,7 @@ alt-shift-0 = 'move-node-to-workspace 10'
 
 alt-shift-o = 'move-node-to-workspace O'
 alt-shift-s = ['move-node-to-workspace S', 'workspace S']
+alt-shift-p = ['move-node-to-workspace P', 'workspace P']
 
 alt-shift-c = 'reload-config'
 
@@ -115,3 +117,8 @@ if.app-id = 'com.apple.systempreferences'
 run = [
 'layout floating'
 ]
+
+[[on-window-detected]]
+if.app-id = 'com.tinyspeck.slackmacgap'
+if.window-title-regex-substring = 'Huddle:.*'
+run = ['layout floating']
