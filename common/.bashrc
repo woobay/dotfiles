@@ -11,3 +11,5 @@
 
 # opencode
 export PATH=/home/woobay/.opencode/bin:$PATH
+
+. "$HOME/.local/share/../bin/env"

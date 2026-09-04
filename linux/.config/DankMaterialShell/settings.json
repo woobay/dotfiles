@@ -117,8 +117,6 @@
   "appLauncherGridColumns": 4,
   "spotlightCloseNiriOverview": true,
   "niriOverviewOverlayEnabled": true,
-  "weatherLocation": "Québec",
-  "weatherCoordinates": "46.8137431,-71.2084061",
   "useAutoLocation": true,
   "weatherEnabled": true,
   "networkPreference": "auto",
@@ -318,5 +316,6 @@
       "maximizeDetection": true
     }
   ],
-  "configVersion": 2
+  "configVersion": 5,
+  "desktopWidgetInstances": []
 }
