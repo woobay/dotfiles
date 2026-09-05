@@ -1,0 +1,10 @@
+require("modules.animations")
+require("modules.autostart")
+require("modules.binds")
+require("modules.env")
+require("modules.general")
+require("modules.inputs")
+require("modules.monitors")
+require("modules.programs")
+require("modules.windowRules")
+

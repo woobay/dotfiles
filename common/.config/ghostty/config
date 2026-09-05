@@ -3,4 +3,5 @@ theme = "Catppuccin Mocha"
 background-opacity = 0.8
 font-thicken = true
 macos-titlebar-style = tabs
+font-family="MonoLisa Variable"
 
